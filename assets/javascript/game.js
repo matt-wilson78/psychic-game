@@ -10,7 +10,17 @@
     var changeGuesses = guessesLeft--
     var lettersGuessed = [];
     
-    document.onKeyUp
+    document.onKeyUp = function(event) {
+        var userGuess = event.key;
+
+        if (userGuess === computerGuess); {
+           wins++ 
+        }
+        else (guessesLeft--);
+        if (guessesLeft === 0); {
+            losses++
+        }
+    }
 
     
     
