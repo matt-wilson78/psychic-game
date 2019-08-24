@@ -14,7 +14,7 @@
     var postLosses = document.getElementById("losses");
     var postGuessesLeft = document.getElementById("guessesLeft");
     var postGuessesSoFar = document.getElementById("guessesSoFar")
-
+    console.log("CPU pick: " + computerPick);
     //Generate users pick
     document.onkeyup = function(event) {
         var userPick = event.key;
@@ -22,11 +22,12 @@
         //Loop to determine wins, losses, and guesses left
         if (userPick === computerPick) {
             wins++;
+            computerPick = alphabet[Math.floor(Math.random () * alphabet.length)];
+            guessesLeft = 9;
             } else { 
                 guessesLeft--;
             }
         console.log(userPick);
-        console.log(computerPick);
             //Hide directions
             //directions.textContent = "";
 
@@ -39,7 +40,12 @@
             console.log("Guesses Left: " + guessesLeft)
             postGuessesSoFar.innerHtml = "Letters Guessed: " + lettersGuessed;
             console.log("Letters Guessed: " + lettersGuessed);
-                
+        
+        if (guessesLeft === 0) {
+            losses++
+            computerPick = alphabet[Math.floor(Math.random () * alphabet.length)];
+            guessesLeft = 9;
+            }    
     }
     
 
