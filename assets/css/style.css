@@ -1,0 +1,15 @@
+#psychic {
+    display: block;
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content {
+    text-align: center;
+}
+
+.inner-content {
+    display: inline-block;
+    text-align: left;
+}
